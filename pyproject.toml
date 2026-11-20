@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smith-pincette"
+version = "0.5.0rc0"  # PEP 440 spelling of 0.5-preview
+description = "Run the Smith-Pincette Model Family (Nitro, Sprint) locally: span extraction for personal data (preview)."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+requires-python = ">=3.10"
+dependencies = [
+    "onnxruntime>=1.18",
+    "tokenizers>=0.19",
+    "huggingface_hub>=0.23",
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+mcp = ["mcp>=2"]
+test = ["pytest>=8"]
+
+[project.urls]
+Models = "https://huggingface.co/Holocortex"
+Source = "https://github.com/holocortex/Smith-Pincette-Models"
+
+[tool.setuptools.packages.find]
+include = ["smith_pincette*"]
